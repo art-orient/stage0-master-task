@@ -1,9 +1,9 @@
 package com.epam.OOP;
 
 public class Animal {
-    private String color;
-    private int numberOfPaws;
-    private boolean hasFur;
+    private final String color;
+    private final int numberOfPaws;
+    private final boolean hasFur;
 
     public Animal(String color, int numberOfPaws, boolean hasFur) {
         this.color = color;
@@ -11,9 +11,10 @@ public class Animal {
         this.hasFur = hasFur;
     }
 
-    String getDescription() {
+    public String getDescription() {
+        String paws = numberOfPaws == 1 ? "paw" : "paws";
         String article = hasFur ? "a" : "no";
-        return "This animal is mostly " + color + ". It has " + numberOfPaws + " paws and " +
+        return "This animal is mostly " + color + ". It has " + numberOfPaws + " " + paws + " and " +
                 article + " fur.";
     }
 }
